@@ -1,0 +1,19 @@
+.boxImg {
+    background-image: url('/img/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}
+
+h1, h2, h3{
+    font-family: 'Nunito Sans', sans-serif;
+    color: aliceblue;
+}
+h4 {
+    font-family: 'Nunito Sans', sans-serif;
+    color: cadetblue;
+}
+.btn-primary {
+    background-color: cadetblue;
+    border-color: cadetblue;
+}
