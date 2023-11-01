@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,8 @@ Route::get('/', function () {
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'dologin'])->name('dologin');
+Route::get('logout',[LoginController::class, 'logout'])->name('logout');
+Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
 
 Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa');
 Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');

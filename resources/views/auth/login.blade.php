@@ -1,41 +1,48 @@
-@extends('layouts.main')
-
+@extends('dashboard.layouts.main')
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center mt-5">
-            <div class="col-sm-6 col-md-4 col-xl-4">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card-title"><h4>Login</h4></div>
-                        <form action="{{ route('dologin') }}" method="post">
-                            @csrf
-                            <div class="row align-items-center mb-2">
-                                <div class="col-md-4 ">
-                                  <label for="inputEmail" class="col-form-label">Username</label>
-                                </div>
-                                <div class="col-md-8">
-                                  <input type="text" id="inputEmail" name="username" class="form-control" autofocus>
-                                </div>
-                            </div>
-                            <div class="row align-items-center mb-2">
-                                <div class="col-md-4">
-                                  <label for="inputPassword6" class="col-form-label">Password</label>
-                                </div>
-                                <div class="col-md-8">
-                                  <input type="password" id="inputPassword6" name="password" class="form-control" aria-describedby="passwordHelpInline">
-                                </div>
-                            </div>
-                            <div class="row align-items-center">
-                                <div class="col-auto">
+    <div class="login-box">
+        <!-- /.login-logo -->
+        <div class="card card-outline card-success">
+            <div class="card-header text-center border-bottom-0">
+                <img class="img-fluid" src="{{ asset('img/pondok.png') }}" alt="Logo Pondok" width="150" height="150">
+            </div>
 
-                                    <button class="btn btn-primary" type="submit">Login</button>
-                                </div>
-                            </div>
+            <div class="card-body">
+            <p class="login-box-msg">Login Untuk Masuk</p>
 
-                        </form>
+            <form action="{{ route('dologin') }}" method="post">
+                @csrf
+                <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Username" name="username">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                    <span class="fas fa-user"></span>
                     </div>
                 </div>
+                </div>
+                <div class="input-group mb-3">
+                <input type="password" class="form-control" placeholder="Password" name="password">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                    </div>
+                </div>
+                </div>
+                <div class="row justify-content-center">
+                <div class="col-4">
+                    <button type="submit" class="btn btn-success btn-block">Login</button>
+                </div>
+                <!-- /.col -->
+                </div>
+            </form>
+
+
+
             </div>
+            <!-- /.card-body -->
         </div>
+        <!-- /.card -->
     </div>
+    <!-- /.login-box -->
+
 @endsection
