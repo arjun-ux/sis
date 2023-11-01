@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('dashboard.layouts.dashboard')
 @section('content')
 {{-- content Card Awal --}}
@@ -56,4 +57,3 @@
 {{-- end content card awal--}}
 
 
-@endsection
