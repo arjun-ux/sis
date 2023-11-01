@@ -21,6 +21,9 @@ Route::get('/', function () {
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'dologin'])->name('dologin');
+Route::get('/dashboard', function(){
+    return view('dashboard.admin.index');
+});
 
 Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa');
 Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
