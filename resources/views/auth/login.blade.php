@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.main')
+@extends('auth.main')
 @section('content')
     <div class="login-box">
         <!-- /.login-logo -->

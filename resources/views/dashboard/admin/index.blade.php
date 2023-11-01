@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-@extends('dashboard.layouts.dashboard')
+
+@extends('dashboard.layouts.main1')
 @section('content')
 {{-- content Card Awal --}}
 <div class="card mt-2">

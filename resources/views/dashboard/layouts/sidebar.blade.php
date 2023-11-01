@@ -1,54 +1,47 @@
-<!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-light-success elevation-4" style="background-color: #3d9970">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #3d9970">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link text-white">
-      <img src="{{ asset('img/pondok.png') }}" alt="pondok Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-dark"><strong> PP. Al-Anwari</strong></span>
+    <a href="../../index3.html" class="brand-link" style="text-decoration: none">
+      <img src="{{ asset('img/pondok.png') }}" alt="AdminLTE Logo" class="brand-image" style="opacity: .8">
+      <span class="brand-text font-weight-light">PP AL-ANWARI</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
-
-    <!-- Sidebar Menu -->
-    <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-                with font-awesome or any other icon font library -->
-            <li class="nav-item">
-                <a href="#" class="nav-link text-white">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
-                    <p>DASHBOARD</p>
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Santri
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="../../index.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Daftar Santri</p>
                 </a>
-            </li>
+              </li>
+            </ul>
+          </li>
 
-            <li class="nav-item">
-                <a href="#" class="nav-link text-white">
-                    <i class="nav-icon fas fa-users"></i>
-                    <p>
-                        SANTRI
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white">
-                        <i class="right nav-icon fas fa-list"></i>
-                        <p>Daftar Santri</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white">
-                        <i class="right nav-icon fas fa-user-plus"></i>
-                        <p>Tambah Santri</p>
-                        </a>
-                    </li>
-
-                </ul>
-            </li>
 
         </ul>
-    </nav>
-    <!-- /.sidebar-menu -->
-</div>
-<!-- /.sidebar -->
-</aside>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
