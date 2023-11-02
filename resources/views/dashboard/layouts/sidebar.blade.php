@@ -12,31 +12,37 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt text-white"></i>
-              <p>
-                Dashboard
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-users text-white"></i>
-              <p>
-                Santri
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="../../index.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Daftar Santri</p>
+            <li class="nav-item">
+                <a href="{{ route('dashboard') }}" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt text-white"></i>
+                <p>
+                    Dashboard
+                </p>
                 </a>
-              </li>
-            </ul>
-          </li>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-users text-white"></i>
+                <p>
+                    Santri
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('siswa') }}" class="nav-link">
+                        <i class="nav-icon left fas fa-angle-right"></i>
+                        <p>Daftar Santri</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('siswa.create') }}" class="nav-link">
+                        <i class="nav-icon left fas fa-angle-right"></i>
+                        <p>Tambah Santri</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
 
         </ul>

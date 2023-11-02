@@ -27,4 +27,5 @@ Route::get('logout',[LoginController::class, 'logout'])->name('logout');
 Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
 
 Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa');
+Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');
 Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');

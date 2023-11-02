@@ -13,32 +13,46 @@ class SiswaController extends Controller
     {
         $getSiswa = Siswa::all();
         // dd($getSiswa);
-        return view('siswa.index', compact('getSiswa'));
+        return view('dashboard.siswa.index', compact('getSiswa'));
+    }
+    public function create()
+    {
+        return view('dashboard.siswa.create');
     }
 
-    // public function store(Request $request)
-    // {
-    //     $this->validate($request, [
-    //         'nama' => 'required',
-    //         'nis' => 'required',
-    //         'jenis_kelamin' => 'required',
-    //         'tanggal_lahir' => 'required',
-    //         'alamat' => 'required',
-    //         'kelas_id' => 'required',
-    //         'kamar_id' => 'required'
-    //     ]);
-    //     // dd($request);
-    //     Siswa::create([
-    //         'nama' => $request->nama,
-    //         'nis' => $request->nis,
-    //         'jenis_kelamin' => $request->jenis_kelamin,
-    //         'tanggal_lahir' => $request->tanggal_lahir,
-    //         'alamat' => $request->alamat,
-    //         'kelas_id' => $request->kelas_id,
-    //         'kamar_id' => $request->kamar_id
-    //     ]);
-    //     return redirect()->route('siswa')->with('success','Data Berhasil Ditambahkan');
-    // }
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'nis' => 'required',
+            'no_nik' => 'required',
+            'no_kk' => 'required',
+            'nama' => 'required',
+            'jenis_kelamin' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'domisili_id' => 'required',
+            'ortu_id' => 'required',
+            'alamat' => 'required',
+            'diniyyah_id' => 'required',
+            'kamar_id' => 'required',
+        ]);
+        // dd($request);
+        Siswa::create([
+            'nis' => $request->nis,
+            'no_nik' => $request->no_nik,
+            'no_kk' => $request->no_kk,
+            'nama' => $request->nama,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'domisili_id' => $request->domisili_id,
+            'ortu_id' => $request->ortu_id,
+            'alamat' => $request->alamat,
+            'diniyyah_id' => $request->diniyyah_id,
+            'kamar_id' => $request->kamar_id,
+        ]);
+        return redirect()->route('siswa')->with('success','Data Berhasil Ditambahkan');
+    }
 
     // public function search()
     // {

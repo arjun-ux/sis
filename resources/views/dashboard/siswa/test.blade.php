@@ -1,9 +1,16 @@
-@extends('layouts.main')
+@extends('dashboard.main')
 @section('content')
-<div class="container">
-    <div class="row mb-2">
-        <div class="card">
-            <div class="card-body">
+
+<div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header"><h4>Santri</h4></div>
+{{-- main content --}}
+
                 <h4 class="card-title">Tambah Data</h4>
                 <form action="{{ route('siswa.store') }}" method="post">
                     @csrf
@@ -76,9 +83,7 @@
                     <button class="btn btn-success" type="submit">Simpan</button>
 
                 </form>
-            </div>
-        </div>
-    </div>
+
 
     <div class="row">
         <table id="tableSiswa" class="table table-bordered table-striped">
@@ -112,5 +117,11 @@
     </div>
 
 </div>
-
+</div>
+</div>
+</div>
+</div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+</div>
 @endsection

@@ -8,15 +8,18 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header"><h4>Dashboard</h4></div>
-
+{{-- main content --}}
                         <div class="row mt-2 px-2 py-2">
                             <div class="col-md-3">
-                                <div class="card">
-                                    <div class="card-header colorCard">Santri</div>
-                                    <div class="card-body">
-                                        <p>Jumlah Santri</p>
+                                <a href="{{ route('siswa') }}" style="text-decoration: none">
+                                    <div class="card">
+                                        <div class="card-header colorCard">Santri</div>
+                                        <div class="card-body text-center">
+                                            <h4>Jumlah Santri</h4>
+                                            <h3>{{$countSiswa}}</h3>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="col-md-3">
                                 <div class="card">
@@ -43,7 +46,7 @@
                                 </div>
                             </div>
                         </div>
-
+{{-- end main content --}}
                     </div>
                 </div>
             </div>
