@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="../../index3.html" class="brand-link" style="text-decoration: none">
       <img src="{{ asset('img/pondok.png') }}" alt="AdminLTE Logo" class="brand-image" style="opacity: .8">
-      <span class="brand-text font-weight-light">PP AL-ANWARI</span>
+      <span class="brand-text font-weight-dark">PP AL-ANWARI</span>
     </a>
 
     <!-- Sidebar -->
@@ -14,7 +14,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-tachometer-alt text-white"></i>
               <p>
                 Dashboard
               </p>
@@ -22,7 +22,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
+              <i class="nav-icon fas fa-users text-white"></i>
               <p>
                 Santri
                 <i class="right fas fa-angle-left"></i>
