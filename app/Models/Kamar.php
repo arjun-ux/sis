@@ -12,6 +12,6 @@ class Kamar extends Model
 
     public function Siswa()
     {
-        return $this->hasOne(Siswa::class);
+        return $this->hasMany(Siswa::class);
     }
 }

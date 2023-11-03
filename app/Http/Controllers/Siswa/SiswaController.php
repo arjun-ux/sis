@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Siswa;
+use App\Http\Controllers\Controller;
 use App\Models\Kamar;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
