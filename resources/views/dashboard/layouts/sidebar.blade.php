@@ -43,6 +43,22 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('kamar') }}" class="nav-link">
+                <i class="nav-icon fas fa-layer-group text-white"></i>
+                <p>
+                    Kamar
+                </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('diniyyah') }}" class="nav-link">
+                <i class="nav-icon fas fa-layer-group text-white"></i>
+                <p>
+                    Diniyyah
+                </p>
+                </a>
+            </li>
 
 
         </ul>
