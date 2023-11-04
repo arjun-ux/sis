@@ -3,8 +3,9 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Setting\DiniyyahController;
+use App\Http\Controllers\Setting\DomisiliController;
 use App\Http\Controllers\Setting\KamarController;
-use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\Siswa\SiswaController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -22,6 +23,9 @@ Route::post('/kamar', [KamarController::class, 'store'])->name('kamar.store');
 
 Route::get('/diniyyah', [DiniyyahController::class, 'index'])->name('diniyyah');
 Route::post('/diniyyah', [DiniyyahController::class, 'store'])->name('diniyyah.store');
+
+Route::get('/domi', [DomisiliController::class, 'index'])->name('domisili');
+Route::post('/domi', [DomisiliController::class, 'store'])->name('domisili.store');
 
 Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa');
 Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');
