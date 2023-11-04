@@ -11,10 +11,12 @@ class DomisiliController extends Controller
 {
     public function index()
     {
-        $getDom = Domisili::all();
+        $getMuqim = Domisili::where('kategori_domisili','Muqim')->first();
         $Muqim = Siswa::where('domisili_id', '1')->get()->count();
+        $getNonMuqim = Domisili::where('kategori_domisili','Non-Muqim')->first();
+        $nonMuqim = Siswa::where('domisili_id', '2')->get()->count();
         // dd($Muqim);
-        return view('dashboard.settings.domisili', compact('getDom','Muqim'));
+        return view('dashboard.settings.domisili', compact('getMuqim','Muqim', 'getNonMuqim', 'nonMuqim'));
     }
 
     public function store(Request $request)

@@ -7,7 +7,7 @@
             <div class="row mt-2">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header"><h4>Diniyyah</h4></div>
+                        <div class="card-header"><h4>Domisili</h4></div>
                         <div class="col-md-2">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createDom">
                                 Tambah
@@ -21,13 +21,14 @@
                                         <th>Total</th>
                                     </thead>
                                     <tbody>
-
-                                        @foreach ($getDom as $dom)
-                                            <tr>
-                                                <td>{{$dom->kategori_domisili}}</td>
-                                                <td>{{$Muqim}}</td>
-                                            </tr>
-                                        @endforeach
+                                        <tr>
+                                            <td>{{$getMuqim->kategori_domisili}}</td>
+                                            <td>{{$Muqim}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{$getNonMuqim->kategori_domisili}}</td>
+                                            <td>{{$nonMuqim}}</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
