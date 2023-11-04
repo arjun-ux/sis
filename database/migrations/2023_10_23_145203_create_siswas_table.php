@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
             $table->unsignedBigInteger('domisili_id');
-            $table->unsignedBigInteger('ortu_id');
+            $table->unsignedBigInteger('ortu_id')->nullable();
             $table->text('alamat');
 
             $table->unsignedBigInteger('diniyyah_id');

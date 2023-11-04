@@ -31,7 +31,7 @@ class SiswaController extends Controller
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
             'domisili_id' => 'required',
-            'ortu_id' => 'required',
+            'ortu_id' => '',
             'alamat' => 'required',
             'diniyyah_id' => 'required',
             'kamar_id' => 'required',
@@ -46,12 +46,18 @@ class SiswaController extends Controller
             'tempat_lahir' => $request->tempat_lahir,
             'tanggal_lahir' => $request->tanggal_lahir,
             'domisili_id' => $request->domisili_id,
-            'ortu_id' => $request->ortu_id,
+            'ortu_id' => $request->ortu_id ?: null,
             'alamat' => $request->alamat,
             'diniyyah_id' => $request->diniyyah_id,
             'kamar_id' => $request->kamar_id,
         ]);
-        return redirect()->route('siswa')->with('success','Data Berhasil Ditambahkan');
+        return redirect('ortu.create');
+
+    }
+
+    public function profile()
+    {
+        return view('dashboard.siswa.profile');
     }
 
     // public function search()

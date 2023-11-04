@@ -22,19 +22,34 @@
 
                                                             <div class="row align-items-center mb-1">
                                                                 <div class="col-md-4">
-                                                                <label for="inputPassword6" class="col-form-label">Nama</label>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                <input type="text" id="inputPassword6" class="form-control" name="nama">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row align-items-center mb-1">
-                                                                <div class="col-md-4">
                                                                 <label for="inputPassword6" class="col-form-label">NIS</label>
                                                                 </div>
                                                                 <div class="col-md-8">
                                                                 <input type="text" id="inputPassword6" class="form-control" name="nis">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row align-items-center mb-1">
+                                                                <div class="col-md-4">
+                                                                <label for="inputPassword6" class="col-form-label">NIK</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                <input type="text" id="inputPassword6" class="form-control" name="no_nik">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row align-items-center mb-1">
+                                                                <div class="col-md-4">
+                                                                <label for="inputPassword6" class="col-form-label">NO KK</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                <input type="text" id="inputPassword6" class="form-control" name="no_kk">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row align-items-center mb-1">
+                                                                <div class="col-md-4">
+                                                                <label for="inputPassword6" class="col-form-label">Nama</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                <input type="text" id="inputPassword6" class="form-control" name="nama">
                                                                 </div>
                                                             </div>
 
@@ -51,6 +66,14 @@
                                                                 {{-- <input type="text" id="inputPassword6" class="form-control" name="jenis_kelamin"> --}}
                                                                 </div>
                                                             </div>
+                                                            <div class="row align-items-center mb-1">
+                                                                <div class="col-md-4">
+                                                                <label for="inputPassword6" class="col-form-label">Tempat Lahir</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                <input type="text" id="inputPassword6" class="form-control" name="tempat_lahir">
+                                                                </div>
+                                                            </div>
 
                                                             <div class="row align-items-center mb-1">
                                                                 <div class="col-md-4">
@@ -62,21 +85,40 @@
                                                             </div>
                                                             <div class="row align-items-center mb-1">
                                                                 <div class="col-md-4">
+                                                                <label for="inputPassword6" class="col-form-label">Domisili</label>
+                                                                </div>
+                                                                <div class="col-md-8" >
+                                                                    <select class="form-select" id="inputPassword6" name="domisili_id">
+                                                                        <option selected>== Pilih Domisili ==</option>
+                                                                        <option value="1">Muqim</option>
+                                                                        <option value="2">Non-Muqim</option>
+                                                                    </select>
+                                                                {{-- <input type="text" id="inputPassword6" class="form-control" name="jenis_kelamin"> --}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="row align-items-center mb-1">
+                                                                <div class="col-md-4">
                                                                     <label for="exampleFormControlTextarea1" class="col-form-label">Alamat</label>
                                                                 </div>
                                                                 <div class="col-md-8">
                                                                     <textarea class="form-control" id="exampleFormControlTextarea1" name="alamat" rows="3"></textarea>
                                                                 </div>
                                                             </div>
-
                                                             <div class="row align-items-center mb-1">
                                                                 <div class="col-md-4">
-                                                                <label for="inputPassword6" class="col-form-label">Kelas</label>
+                                                                <label for="inputPassword6" class="col-form-label">Domisili</label>
                                                                 </div>
-                                                                <div class="col-md-8">
-                                                                <input type="text" id="inputPassword6" class="form-control" name="kelas_id">
+                                                                <div class="col-md-8" >
+                                                                    <select class="form-select" id="inputPassword6" name="diniyyah_id">
+                                                                        <option selected>== Pilih Diniyyah ==</option>
+                                                                        <option value="Ula">Ula</option>
+                                                                        <option value="Wustho">Wustho</option>
+                                                                        <option value="Ulya">Ulya</option>
+                                                                    </select>
+                                                                {{-- <input type="text" id="inputPassword6" class="form-control" name="jenis_kelamin"> --}}
                                                                 </div>
                                                             </div>
+
                                                             <div class="row align-items-center mb-1">
                                                                 <div class="col-md-4">
                                                                 <label for="inputPassword6" class="col-form-label">Kamar</label>
