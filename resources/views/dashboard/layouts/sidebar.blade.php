@@ -43,31 +43,37 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-layer-group text-white"></i>
+                <p>
+                    Pondok
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('kamar') }}" class="nav-link">
+                        <i class="nav-icon left fas fa-angle-right"></i>
+                        <p>Kamar</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('diniyyah') }}" class="nav-link">
+                        <i class="nav-icon left fas fa-angle-right"></i>
+                        <p>Diniyyah</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('domisili') }}" class="nav-link">
+                        <i class="nav-icon left fas fa-angle-right"></i>
+                        <p>Domisili</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
-            <li class="nav-item">
-                <a href="{{ route('kamar') }}" class="nav-link">
-                <i class="nav-icon fas fa-layer-group text-white"></i>
-                <p>
-                    Kamar
-                </p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ route('diniyyah') }}" class="nav-link">
-                <i class="nav-icon fas fa-layer-group text-white"></i>
-                <p>
-                    Diniyyah
-                </p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ route('domisili') }}" class="nav-link">
-                <i class="nav-icon fas fa-layer-group text-white"></i>
-                <p>
-                    Domisili
-                </p>
-                </a>
-            </li>
+            
 
 
         </ul>
