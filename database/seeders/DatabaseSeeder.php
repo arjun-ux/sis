@@ -8,10 +8,12 @@ use App\Models\Diniyyah;
 use App\Models\Domisili;
 use App\Models\Kamar;
 use App\Models\Ortu;
+use App\Models\Role;
 use App\Models\Siswa;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,11 +22,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+
         User::create([
-            'name' => 'Admin',
+            'name' => 'admin',
             'username' => 'admin',
-            'email' => 'admin@gmail.com',
+            'email' => 'admin@mail.com',
             'password' => Hash::make('123123'),
+            'role_id' => 1
+        ]);
+
+        Role::create([
+            'role_name' => 'admin'
+        ]);
+        Role::create([
+            'role_name' => 'siswa'
         ]);
         Diniyyah::create([
             'nama_tingkatan' => 'Ula',
@@ -55,5 +66,6 @@ class DatabaseSeeder extends Seeder
 
         Ortu::factory(7)->create();
         Siswa::factory(10)->create();
+
     }
 }

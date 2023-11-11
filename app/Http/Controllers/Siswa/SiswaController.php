@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class SiswaController extends Controller
 {
+    public function siswaPage()
+    {
+        $getName = Siswa::get('nama')->first();
+        return view('siswaPage.index', compact('getName'));
+    }
     public function index()
     {
         $getSiswa = Siswa::all();

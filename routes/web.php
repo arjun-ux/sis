@@ -14,6 +14,10 @@ Route::get('/', function () {
     return view('landingpage.index');
 });
 
+Route::get('/login-santri', [LoginController::class, 'loginSantri'])->name('login.santri');
+Route::post('/login-santri', [LoginController::class, 'dologinSantri'])->name('dologin.santri');
+Route::get('/siswa-page', [SiswaController::class, 'siswaPage'])->name('siswa.page');
+
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'dologin'])->name('dologin');
 Route::get('logout',[LoginController::class, 'logout'])->name('logout');

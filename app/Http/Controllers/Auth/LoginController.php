@@ -8,6 +8,30 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    public function loginSantri()
+    {
+        return view('auth.loginSiswa');
+    }
+    public function dologinSantri(Request $request)
+    {
+        $credential = $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+        if (Auth::guard('siswa')->attempt($credential, $request->remember)) {
+            return redirect()->intended(route('siswa.page'));
+        }
+        echo 'login gagal';
+    }
+    public function logoutSantri()
+    {
+        Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+        return redirect()->route('login.santri')
+            ->withSuccess('Logout Berhasil');
+    }
+
     public function login()
     {
         return view('auth.login');
@@ -15,7 +39,7 @@ class LoginController extends Controller
     public function dologin(Request $request)
     {
         $credential = $request->validate([
-            'username' => 'required',
+            'email' => 'required',
             'password' => 'required',
         ]);
         // dd($credential);
@@ -23,7 +47,7 @@ class LoginController extends Controller
             session()->regenerate();
             return redirect('dashboard')->withSuccess('Login Successfully!');
         }
-        return back()->with('error', 'Username atau password Salah!!!');
+        return back()->with('error', 'Email atau password Salah!!!');
     }
     public function logout()
     {

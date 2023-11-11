@@ -9,7 +9,13 @@
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Selamat Datang, <strong>{{ Auth::user()->name }}</strong>
+
+
+                {{-- Selamat Datang, <strong>{{ Auth::user()->name }}</strong> --}}
+
+                Selamat Datang, <strong>{{ $getName->nama }}</strong>
+
+
             </a>
             <ul class="dropdown-menu dropdown-menu-right shadow ">
               <li>

@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('siswas', function (Blueprint $table) {
             $table->id();
-            $table->char('nis', 6)->unique();
+            $table->string('nis', 6)->unique();
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->unsignedBigInteger('role_id');
+
             $table->string('no_nik')->unique();
             $table->string('no_kk');
             $table->string('nama');

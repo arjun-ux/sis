@@ -2,13 +2,20 @@
 
 namespace App\Models;
 
+use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Siswa extends Model
+
+class Siswa extends Model implements \Illuminate\Contracts\Auth\Authenticatable
 {
-    use HasFactory;
+    use HasFactory, Authenticatable;
     protected $guarded = [];
+
+    public function Role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 
     public function Kamar()
     {

@@ -10,6 +10,8 @@ class DashboardController extends Controller
     public function index()
     {
         $countSiswa = Siswa::all()->count();
-        return view('dashboard.admin.index', compact('countSiswa'));
+        $getName = Siswa::get('nama')->first();
+        // dd($getName);
+        return view('dashboard.admin.index', compact('countSiswa', 'getName'));
     }
 }

@@ -8,9 +8,9 @@
             </div>
 
             <div class="card-body">
-            <p class="login-box-msg">Login Untuk Masuk</p>
+            <p class="login-box-msg">Login Untuk Santri</p>
 
-            <form action="{{ route('dologin') }}" method="post">
+            <form action="{{ route('dologin.santri') }}" method="post">
                 @csrf
                 <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Email" name="email">
