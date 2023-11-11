@@ -17,10 +17,11 @@ Route::get('/', function () {
 Route::get('/login-santri', [LoginController::class, 'loginSantri'])->name('login.santri');
 Route::post('/login-santri', [LoginController::class, 'dologinSantri'])->name('dologin.santri');
 Route::get('/siswa-page', [SiswaController::class, 'siswaPage'])->name('siswa.page');
+Route::get('/logout-santri', [LoginController::class, 'logoutSantri'])->name('logout.santri');
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'dologin'])->name('dologin');
-Route::get('logout',[LoginController::class, 'logout'])->name('logout');
+Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
 Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
 
 Route::get('/kamar', [KamarController::class, 'index'])->name('kamar');

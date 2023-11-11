@@ -9,10 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class SiswaController extends Controller
 {
+    // index untuk role siswa/santri
     public function siswaPage()
     {
-        $getName = Siswa::get('nama')->first();
-        return view('siswaPage.index', compact('getName'));
+
+        return view('siswaPage.index');
     }
     public function index()
     {
