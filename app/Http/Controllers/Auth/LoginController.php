@@ -44,7 +44,7 @@ class LoginController extends Controller
     public function dologin(Request $request)
     {
         $credential = $request->validate([
-            'email' => 'required',
+            'username' => 'required',
             'password' => 'required',
         ]);
         // dd($credential);

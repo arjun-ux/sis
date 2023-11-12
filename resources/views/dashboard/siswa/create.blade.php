@@ -11,21 +11,50 @@
                             <div class="row mt-2 px-2 py-2">
                                 {{-- main content --}}
                                 {{-- <div class="card-body"> --}}
-                                    <form action="{{ route('siswa.store') }}" method="post">
-                                        @csrf
+
                                     <div class="row">
 
                                             <div class="col-md-6">
                                                 <div class="card card-outline card-success shadow">
                                                     <div class="card-header text-center border-light"><h5>Data Siswa</h5></div>
                                                     <div class="card-body">
-
+                                                        <form action="{{ route('siswa.store') }}" method="post">
+                                                            @csrf
                                                             <div class="row align-items-center mb-1">
                                                                 <div class="col-md-4">
                                                                 <label for="inputPassword6" class="col-form-label">NIS</label>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                <input type="text" id="inputPassword6" class="form-control" name="nis">
+                                                                <input type="text" id="inputPassword6" class="form-control" name="nis" disabled>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row align-items-center mb-1">
+                                                                <div class="col-md-4">
+                                                                <label for="inputPassword6" class="col-form-label">Email</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                <input type="text" id="inputPassword6" class="form-control" name="email">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row align-items-center mb-1">
+                                                                <div class="col-md-4">
+                                                                <label for="inputPassword6" class="col-form-label">Password</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                <input type="text" id="inputPassword6" class="form-control" name="password" disabled>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row align-items-center mb-1">
+                                                                <div class="col-md-4">
+                                                                <label for="inputPassword6" class="col-form-label">Role</label>
+                                                                </div>
+                                                                <div class="col-md-8" >
+                                                                    <select class="form-select" id="inputPassword6" name="role_id">
+                                                                        <option selected>== Pilih Role ==</option>
+                                                                        <option value="1">Admin</option>
+                                                                        <option value="2">Siswa</option>
+                                                                    </select>
+                                                                {{-- <input type="text" id="inputPassword6" class="form-control" name="jenis_kelamin"> --}}
                                                                 </div>
                                                             </div>
                                                             <div class="row align-items-center mb-1">
@@ -106,14 +135,14 @@
                                                             </div>
                                                             <div class="row align-items-center mb-1">
                                                                 <div class="col-md-4">
-                                                                <label for="inputPassword6" class="col-form-label">Domisili</label>
+                                                                <label for="inputPassword6" class="col-form-label">Diniyyah</label>
                                                                 </div>
                                                                 <div class="col-md-8" >
                                                                     <select class="form-select" id="inputPassword6" name="diniyyah_id">
                                                                         <option selected>== Pilih Diniyyah ==</option>
-                                                                        <option value="Ula">Ula</option>
-                                                                        <option value="Wustho">Wustho</option>
-                                                                        <option value="Ulya">Ulya</option>
+                                                                        <option value="1">Ula</option>
+                                                                        <option value="2">Wustho</option>
+                                                                        <option value="3">Ulya</option>
                                                                     </select>
                                                                 {{-- <input type="text" id="inputPassword6" class="form-control" name="jenis_kelamin"> --}}
                                                                 </div>
@@ -123,14 +152,20 @@
                                                                 <div class="col-md-4">
                                                                 <label for="inputPassword6" class="col-form-label">Kamar</label>
                                                                 </div>
-                                                                <div class="col-md-8">
-                                                                <input type="text" id="inputPassword6" class="form-control" name="kamar_id">
+                                                                <div class="col-md-8" >
+                                                                    <select class="form-select" id="inputPassword6" name="kamar_id">
+                                                                        <option selected>== Pilih Kamar ==</option>
+                                                                        <option value="1">A</option>
+                                                                        <option value="2">B</option>
+                                                                    </select>
+                                                                {{-- <input type="text" id="inputPassword6" class="form-control" name="jenis_kelamin"> --}}
                                                                 </div>
                                                             </div>
+                                                        <button class="btn btn-success" type="submit">Simpan</button>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            {{-- <div class="col-md-6">
                                                 <div class="card card-outline card-success shadow">
                                                     <div class="card-header text-center border-light"><h5>Data Siswa</h5></div>
                                                     <div class="card-body">
@@ -163,7 +198,6 @@
                                                                         <option value="laki-laki">Laki-Laki</option>
                                                                         <option value="perempuan">Perempuan</option>
                                                                     </select>
-                                                                {{-- <input type="text" id="inputPassword6" class="form-control" name="jenis_kelamin"> --}}
                                                                 </div>
                                                             </div>
 
@@ -202,10 +236,10 @@
                                                             </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
 
                                         </div>
-                                        <button class="btn btn-success" type="submit">Simpan</button>
+
                                     </form>
                                 {{-- </div> --}}
                                 {{-- end main content --}}

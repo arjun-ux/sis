@@ -28,8 +28,11 @@ class SiswaController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'nis' => 'required',
+        $data = $this->validate($request, [
+            'nis' => '',
+            'email' => 'required',
+            'password' => '',
+            'role_id' => '',
             'no_nik' => 'required',
             'no_kk' => 'required',
             'nama' => 'required',
@@ -42,9 +45,12 @@ class SiswaController extends Controller
             'diniyyah_id' => 'required',
             'kamar_id' => 'required',
         ]);
-        // dd($request);
+        dd($data);
         Siswa::create([
-            'nis' => $request->nis,
+            'nis' => Siswa::generateNis() ?: null,
+            'email' => $request['email'],
+            'password' => bcrypt($request['password']),
+            'role_id' => $request->role_id ?: null,
             'no_nik' => $request->no_nik,
             'no_kk' => $request->no_kk,
             'nama' => $request->nama,
@@ -57,7 +63,7 @@ class SiswaController extends Controller
             'diniyyah_id' => $request->diniyyah_id,
             'kamar_id' => $request->kamar_id,
         ]);
-        return redirect('ortu.create');
+        return redirect()->route('siswa');
 
     }
 

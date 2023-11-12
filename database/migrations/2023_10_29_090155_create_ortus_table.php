@@ -13,19 +13,19 @@ return new class extends Migration
     {
         Schema::create('ortus', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_ayah');
-            $table->string('nik_ayah')->unique();
-            $table->string('pekerjaan_ayah');
-            $table->string('nama_ibu');
-            $table->string('nik_ibu')->unique();
-            $table->string('pekerjaan_ibu');
-            $table->string('penghasilan_ortu');
+            $table->string('nama_ayah')->nullable();
+            $table->string('nik_ayah')->unique()->nullable();
+            $table->string('pekerjaan_ayah')->nullable();
+            $table->string('nama_ibu')->nullable();
+            $table->string('nik_ibu')->unique()->nullable();
+            $table->string('pekerjaan_ibu')->nullable();
+            $table->string('penghasilan_ortu')->nullable();
             $table->text('alamat_ortu')->nullable();
-            $table->string('nama_wali');
-            $table->string('hubungan_wali');
-            $table->string('pekerjaan_wali');
-            $table->string('penghasilan_wali');
-            $table->text('alamat_wali');
+            $table->string('nama_wali')->nullable();
+            $table->string('hubungan_wali')->nullable();
+            $table->string('pekerjaan_wali')->nullable();
+            $table->string('penghasilan_wali')->nullable();
+            $table->text('alamat_wali')->nullable();
             $table->timestamps();
         });
     }

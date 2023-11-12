@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Siswa;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 
@@ -21,7 +22,7 @@ class SiswaFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'password' => Hash::make('123123'),
             'role_id' => 2,
-            'nis'   => fake()->numberBetween(100000, 999999),
+            'nis'   => Siswa::generateNis(),
             'no_nik' => fake()->numberBetween(100000000, 999999999),
             'no_kk' => fake()->numberBetween(100000000, 999999999),
             'nama'  => fake()->name(),

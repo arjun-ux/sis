@@ -13,23 +13,23 @@ return new class extends Migration
     {
         Schema::create('siswas', function (Blueprint $table) {
             $table->id();
-            $table->string('nis', 6)->unique();
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->unsignedBigInteger('role_id');
+            $table->string('nis', 6)->unique()->nullable();
+            $table->string('email')->unique()->nullable();
+            $table->string('password')->nullable();
+            $table->unsignedBigInteger('role_id')->nullable();
 
-            $table->string('no_nik')->unique();
-            $table->string('no_kk');
-            $table->string('nama');
-            $table->enum('jenis_kelamin', ['laki-laki', 'perempuan']);
-            $table->string('tempat_lahir');
-            $table->date('tanggal_lahir');
-            $table->unsignedBigInteger('domisili_id');
+            $table->string('no_nik')->unique()->nullable();
+            $table->string('no_kk')->nullable();
+            $table->string('nama')->nullable();
+            $table->enum('jenis_kelamin', ['laki-laki', 'perempuan'])->nullable();
+            $table->string('tempat_lahir')->nullable();
+            $table->date('tanggal_lahir')->nullable();
+            $table->unsignedBigInteger('domisili_id')->nullable();
             $table->unsignedBigInteger('ortu_id')->nullable();
-            $table->text('alamat');
+            $table->text('alamat')->nullable();
 
-            $table->unsignedBigInteger('diniyyah_id');
-            $table->unsignedBigInteger('kamar_id');
+            $table->unsignedBigInteger('diniyyah_id')->nullable();
+            $table->unsignedBigInteger('kamar_id')->nullable();
             $table->timestamps();
         });
     }

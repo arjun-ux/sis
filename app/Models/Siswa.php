@@ -33,4 +33,18 @@ class Siswa extends Model implements \Illuminate\Contracts\Auth\Authenticatable
     {
         return $this->belongsTo(Ortu::class);
     }
+
+    // generate nis berdasarkan tahun masuk dan nomor urut
+    // pendaftaran
+    public static function generateNis()
+    {
+        $tahun = date('Y');
+        // ambil 2 angka terkahir dari tahun
+        $getDuaAngka = substr($tahun, -2);
+        // ambil data siswa berdasarkan id
+        $uniqNumber = rand(1000, 9999);
+        $nis = "{$getDuaAngka}{$uniqNumber}";
+        return $nis;
+    }
+
 }
