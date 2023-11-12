@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="card card-outline card-success">
             <div class="card-header text-center border-bottom-0">
-                <img class="img-fluid" src="{{ asset('img/pondok.png') }}" alt="Logo Pondok" width="150" height="150">
+                <img class="img-fluid img-thumbnail" src="{{ asset('img/blank.png') }}" alt="Logo Pondok" width="150" height="150">
             </div>
 
             <div class="card-body">

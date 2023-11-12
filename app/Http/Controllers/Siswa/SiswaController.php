@@ -28,6 +28,7 @@ class SiswaController extends Controller
 
     public function store(Request $request)
     {
+
         $data = $this->validate($request, [
             'nis' => '',
             'email' => 'required',
@@ -45,11 +46,12 @@ class SiswaController extends Controller
             'diniyyah_id' => 'required',
             'kamar_id' => 'required',
         ]);
-        dd($data);
+        // dd($data);
+        // bcrypt($request['password']),
         Siswa::create([
             'nis' => Siswa::generateNis() ?: null,
             'email' => $request['email'],
-            'password' => bcrypt($request['password']),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'role_id' => $request->role_id ?: null,
             'no_nik' => $request->no_nik,
             'no_kk' => $request->no_kk,
