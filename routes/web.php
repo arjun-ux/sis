@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Mail\SendEmailController;
 use App\Http\Controllers\Setting\DiniyyahController;
 use App\Http\Controllers\Setting\DomisiliController;
 use App\Http\Controllers\Setting\KamarController;
@@ -15,10 +16,13 @@ Route::get('/', function () {
 });
 
 
+// Route::post('/mail', [SendEmailController::class, 'index'])->name('send.mail');
 
 Route::get('/login-santri', [LoginController::class, 'loginSantri'])->name('login.santri');
 Route::post('/login-santri', [LoginController::class, 'dologinSantri'])->name('dologin.santri');
 Route::get('/siswa-page', [SiswaController::class, 'siswaPage'])->name('siswa.page');
+Route::get('/ubahPassSis', [SiswaController::class, 'ubahPassPage'])->name('siswa.ubah');
+Route::post('/ubahPassSis', [SiswaController::class, 'ubahPass'])->name('siswa.ubahpass');
 Route::get('/logout-santri', [LoginController::class, 'logoutSantri'])->name('logout.santri');
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');

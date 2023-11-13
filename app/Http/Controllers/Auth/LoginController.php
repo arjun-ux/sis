@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -13,8 +14,9 @@ class LoginController extends Controller
     public function loginSantri()
     {
         // $get = Siswa::latest()->first('email');
-
-        // dd($get);
+        // $data = Hash::make('password');
+        // $des =  hash::forgetDrivers($data);
+        // dd($des);
         return view('auth.loginSiswa');
     }
     public function dologinSantri(Request $request)

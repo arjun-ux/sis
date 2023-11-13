@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -9,17 +10,18 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
+
 class kirimEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $getSiswaMail;
+    public $dataSiswa;
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($dataSiswa)
     {
-        //
+        $this->dataSiswa = $dataSiswa;
     }
 
     /**
@@ -28,7 +30,7 @@ class kirimEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Kirim Email',
+            subject: 'Email Dari SIS',
         );
     }
 
@@ -39,9 +41,7 @@ class kirimEmail extends Mailable
     {
         return new Content(
             view: 'mail.sendEmail',
-            data: [
-                "password" => $this->getSiswaMail['password'],
-            ]
+
         );
     }
 

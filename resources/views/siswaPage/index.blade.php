@@ -16,8 +16,9 @@
                 <p>Alamat, {{ Auth::guard('siswa')->user()->alamat }}</p>
 
                 <div class="row justify-content-center">
-                    <div class="col-md-4 text-center">
+                    <div class="col-md-12 text-center">
                         <a class="btn btn-sm btn-danger" href="{{ route('logout.santri') }}">Logout</a>
+                        <a href="{{ route('siswa.ubah') }}">Ganti Password</a>
                     </div>
                 </div>
             </div>

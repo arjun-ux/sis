@@ -57,7 +57,7 @@ class SiswaController extends Controller
         Siswa::create([
             'nis' => Siswa::generateNis() ?: null,
             'email' => $request->email,
-            'password' => Hash::make(Str::random(8)), // nantinya password akan dikirim ke email pendaftar
+            'password' => Hash::make('pass123') , // password  // nantinya password akan dikirim ke email pendaftar
             'role_id' => $request->role_id ?: null,
             'no_nik' => $request->no_nik,
             'no_kk' => $request->no_kk,
@@ -70,14 +70,31 @@ class SiswaController extends Controller
             'alamat' => $request->alamat,
             'diniyyah_id' => $request->diniyyah_id,
             'kamar_id' => $request->kamar_id,
+
+
         ]);
         // mengirim password ke akun email yang di daftarkan
+        $siswa = Siswa::latest()->first();
+        $dataSiswa = [
+            'email' => $siswa->email,
+            'nama' => $siswa->nama,
+            'nis' => $siswa->nis,
+        ];
+        Mail::to($dataSiswa['email'])->send(new kirimEmail($dataSiswa));
 
-        $getSiswaMail = Siswa::latest()->first();
-
-        Mail::to($getSiswaMail->email)->send(new kirimEmail('data'));
         return redirect()->route('siswa');
 
+    }
+
+    public function ubahPassPage()
+    {
+        return view('siswaPage.ubah');
+    }
+
+    public function ubahPass(Request $r)
+    {
+        // $siswa = Siswa::
+        // return redirect()->route('siswa.page');
     }
 
     public function profile()
