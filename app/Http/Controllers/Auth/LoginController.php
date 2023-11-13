@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Siswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,6 +12,9 @@ class LoginController extends Controller
     // login santri
     public function loginSantri()
     {
+        // $get = Siswa::latest()->first('email');
+
+        // dd($get);
         return view('auth.loginSiswa');
     }
     public function dologinSantri(Request $request)

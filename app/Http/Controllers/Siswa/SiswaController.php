@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Siswa;
 use App\Http\Controllers\Controller;
-use App\Models\Kamar;
+use App\Mail\kirimEmail;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class SiswaController extends Controller
 {
@@ -18,13 +20,16 @@ class SiswaController extends Controller
     public function index()
     {
         $getSiswa = Siswa::all();
-        // dd($getSiswa);
+
+        // dd($get);
         return view('dashboard.siswa.index', compact('getSiswa'));
     }
     public function create()
     {
         return view('dashboard.siswa.create');
     }
+
+
 
     public function store(Request $request)
     {
@@ -47,11 +52,12 @@ class SiswaController extends Controller
             'kamar_id' => 'required',
         ]);
         // dd($data);
-        // bcrypt($request['password']),
+        // '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+
         Siswa::create([
             'nis' => Siswa::generateNis() ?: null,
-            'email' => $request['email'],
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'email' => $request->email,
+            'password' => Hash::make(Str::random(8)), // nantinya password akan dikirim ke email pendaftar
             'role_id' => $request->role_id ?: null,
             'no_nik' => $request->no_nik,
             'no_kk' => $request->no_kk,
@@ -65,6 +71,11 @@ class SiswaController extends Controller
             'diniyyah_id' => $request->diniyyah_id,
             'kamar_id' => $request->kamar_id,
         ]);
+        // mengirim password ke akun email yang di daftarkan
+
+        $getSiswaMail = Siswa::latest()->first();
+
+        Mail::to($getSiswaMail->email)->send(new kirimEmail('data'));
         return redirect()->route('siswa');
 
     }

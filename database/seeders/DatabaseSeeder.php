@@ -65,7 +65,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Ortu::factory(7)->create();
-        Siswa::factory(10)->create();
+        // Siswa::factory(10)->create();
 
     }
 }

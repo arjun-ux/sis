@@ -13,7 +13,7 @@
                                 <table id="tableSiswa" class="table table-bordered table-striped">
                                     <thead>
                                         <th>NIS</th>
-                                        <th>Password</th>
+                                        <th>Email</th>
                                         <th>Nama Siswa</th>
                                         <th>Jenis Kelamin</th>
                                         <th>Kamar</th>
@@ -24,7 +24,7 @@
                                         @foreach ($getSiswa as $siswa)
                                             <tr>
                                                 <td>{{$siswa->nis}}</td>
-                                                <td>{{$siswa->password}}</td>
+                                                <td>{{$siswa->email}}</td>
                                                 <td>{{$siswa->nama}}</td>
                                                 <td>{{$siswa->jenis_kelamin}}</td>
                                                 <td>{{$siswa->Kamar->nama_kamar}}</td>
