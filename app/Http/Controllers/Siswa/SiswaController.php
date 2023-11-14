@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\kirimEmail;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
@@ -86,6 +87,7 @@ class SiswaController extends Controller
 
     }
 
+    // ubah password dari page siswa
     public function ubahPassPage()
     {
         return view('siswaPage.ubah');
@@ -93,10 +95,21 @@ class SiswaController extends Controller
 
     public function ubahPass(Request $r)
     {
-        // $siswa = Siswa::
-        // return redirect()->route('siswa.page');
+       $this->validate($r, [
+            'password_lama' => 'required',
+            'password' => 'required',
+       ]);
+       $authSiswa = Auth::guard('siswa')->user();
+       if (!Hash::check($r->password_lama, $authSiswa->password))
+       {
+        return back()->withErrors(['Password Lama Salah']);
+       }
+       $userSiswa = Siswa::find($authSiswa->id);
+       $userSiswa->update([
+        'password'=>bcrypt($r->password),
+        ]);
+        return redirect()->route('siswa.page')->with('success', 'Password Berhasil di Ubah');
     }
-
     public function profile()
     {
         return view('dashboard.siswa.profile');
