@@ -74,7 +74,7 @@ class SiswaController extends Controller
 
 
         ]);
-        // mengirim password ke akun email yang di daftarkan
+        // mengirim password ke akun email yang di daftarkan (send Email After data ke input)
         $siswa = Siswa::latest()->first();
         $dataSiswa = [
             'email' => $siswa->email,
@@ -92,7 +92,6 @@ class SiswaController extends Controller
     {
         return view('siswaPage.ubah');
     }
-
     public function ubahPass(Request $r)
     {
        $this->validate($r, [
@@ -100,9 +99,10 @@ class SiswaController extends Controller
             'password' => 'required',
        ]);
        $authSiswa = Auth::guard('siswa')->user();
-       if (!Hash::check($r->password_lama, $authSiswa->password))
-       {
-        return back()->withErrors(['Password Lama Salah']);
+       if (!Hash::check($r->password_lama, $authSiswa->password)){
+            return back()->withErrors(['Password Lama Salah']);
+       } elseif ($r->password == null) {
+            return back()->with('eror', 'Password Baru Harus Di Isi');
        }
        $userSiswa = Siswa::find($authSiswa->id);
        $userSiswa->update([
@@ -110,6 +110,7 @@ class SiswaController extends Controller
         ]);
         return redirect()->route('siswa.page')->with('success', 'Password Berhasil di Ubah');
     }
+
     public function profile()
     {
         return view('dashboard.siswa.profile');
