@@ -44,4 +44,5 @@ Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.cre
 Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
 Route::get('/siswa-profile', [SiswaController::class, 'profile'])->name('siswa.profile');
 
-Route::get('/ortu/create', [OrtuController::class, 'index'])->name('ortu.create');
+Route::get('/ortu/create', [OrtuController::class, 'create'])->name('ortu.create');
+Route::post('/ortu', [OrtuController::class, 'store'])->name('ortu.store');

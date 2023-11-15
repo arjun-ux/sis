@@ -13,10 +13,7 @@ class LoginController extends Controller
     // login santri
     public function loginSantri()
     {
-        // $get = Siswa::latest()->first('email');
-        // $data = Hash::make('password');
-        // $des =  hash::forgetDrivers($data);
-        // dd($des);
+
         return view('auth.loginSiswa');
     }
     public function dologinSantri(Request $request)

@@ -10,7 +10,7 @@ class OrtuController extends Controller
 {
     public function create()
     {
-        return view('dashboard.ortu.create');
+        return view('dashboard.ortuSiswa.create');
     }
     public function store(Request $request)
     {

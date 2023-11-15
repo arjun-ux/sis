@@ -29,9 +29,6 @@ class SiswaController extends Controller
     {
         return view('dashboard.siswa.create');
     }
-
-
-
     public function store(Request $request)
     {
 
@@ -83,7 +80,7 @@ class SiswaController extends Controller
         ];
         Mail::to($dataSiswa['email'])->send(new kirimEmail($dataSiswa));
 
-        return redirect()->route('siswa');
+        return redirect()->route('ortu.create');
 
     }
 
