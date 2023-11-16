@@ -18,14 +18,14 @@ Route::get('/', function () {
 
 // Route::post('/mail', [SendEmailController::class, 'index'])->name('send.mail');
 
-Route::get('/login-santri', [LoginController::class, 'loginSantri'])->name('login.santri');
+Route::get('/login-santri', [LoginController::class, 'loginSantri'])->name('login.santri')->middleware('guest');
 Route::post('/login-santri', [LoginController::class, 'dologinSantri'])->name('dologin.santri');
 Route::get('/siswa-page', [SiswaController::class, 'siswaPage'])->name('siswa.page');
 Route::get('/ubahPassSis', [SiswaController::class, 'ubahPassPage'])->name('siswa.ubah');
 Route::post('/ubahPassSis', [SiswaController::class, 'ubahPass'])->name('siswa.ubahpass');
 Route::get('/logout-santri', [LoginController::class, 'logoutSantri'])->name('logout.santri');
 
-Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'dologin'])->name('dologin');
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
 Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');

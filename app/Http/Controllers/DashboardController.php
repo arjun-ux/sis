@@ -7,11 +7,15 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
-        $countSiswa = Siswa::all()->count();
-        $getName = Siswa::get('nama')->first();
+        $countSiswa = Siswa::get('nama')->count();
+        // $getName = Siswa::get('nama')->first();
         // dd($getName);
-        return view('dashboard.admin.index', compact('countSiswa', 'getName'));
+        return view('dashboard.admin.index', compact('countSiswa'));
     }
 }

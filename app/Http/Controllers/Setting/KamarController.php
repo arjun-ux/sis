@@ -10,7 +10,7 @@ class KamarController extends Controller
 {
     public function index()
     {
-        $getKamar = Kamar::all();
+        $getKamar = Kamar::all(['*']);
         return view('dashboard.settings.kamar', compact('getKamar'));
     }
     public function store(Request $request)
