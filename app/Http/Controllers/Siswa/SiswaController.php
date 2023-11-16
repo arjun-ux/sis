@@ -12,12 +12,8 @@ use Illuminate\Support\Str;
 
 class SiswaController extends Controller
 {
-    // index untuk role siswa/santri
-    public function siswaPage()
-    {
 
-        return view('siswaPage.index');
-    }
+    // index untuk admin
     public function index()
     {
         $getSiswa = Siswa::all();
@@ -25,8 +21,10 @@ class SiswaController extends Controller
         // dd($get);
         return view('dashboard.siswa.index', compact('getSiswa'));
     }
+    // admin create siswa
     public function create()
     {
+        $this->authorize('isAdmin');
         return view('dashboard.siswa.create');
     }
     public function store(Request $request)
@@ -83,7 +81,18 @@ class SiswaController extends Controller
         return redirect()->route('ortu.create');
 
     }
+    // profile siswa dari admin page
+    public function profile()
+    {
+        return view('dashboard.siswa.profile');
+    }
 
+    // index untuk role siswa/santri
+    public function siswaPage()
+    {
+        // $this->authorize('isSiswa');
+        return view('siswaPage.index');
+    }
     // ubah password dari page siswa
     public function ubahPassPage()
     {
@@ -108,10 +117,7 @@ class SiswaController extends Controller
         return redirect()->route('siswa.page')->with('success', 'Password Berhasil di Ubah');
     }
 
-    public function profile()
-    {
-        return view('dashboard.siswa.profile');
-    }
+
 
     // public function search()
     // {

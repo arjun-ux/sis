@@ -9,7 +9,7 @@ class DashboardController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->authorize('isAdmin');
     }
     public function index()
     {
