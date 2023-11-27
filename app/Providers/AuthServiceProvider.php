@@ -26,10 +26,10 @@ class AuthServiceProvider extends ServiceProvider
         // mendefinisikan user role
 
         Gate::define('isAdmin', function ($user) {
-            return $user->roles->role_name == 'admin';
+            return $user->Role->role_name == 'admin';
         });
         Gate::define('isSiswa', function ($siswa) {
-            return $siswa->roles->role_name == 'siswa';
+            return $siswa->Role->id == 'siswa';
         });
     }
 }

@@ -10,7 +10,7 @@
                     <h2>Pondok Pesantren Al Anwari</h2>
                     <h3>Kertosari - Banyuwangi</h3>
 
-                    <a class="btn btn-sm btn-outline-warning" href="#"><i data-feather="briefcase"></i> Klik Daftar</a>
+                    <a class="btn btn-sm btn-outline-warning" href="{{ route('register') }}"><i data-feather="briefcase"></i> Klik Daftar</a>
                     <a class="btn btn-sm btn-outline-info" href="{{ route('login.santri') }}"><i data-feather="log-in"></i> Login Santri</a>
                 </div>
             </div>

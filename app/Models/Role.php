@@ -16,7 +16,7 @@ class Role extends Model
         return $this->hasOne(User::class);
     }
     // function for hasOne to Siswa
-    public function Siswa(){
-        return $this->hasOne(Siswa::class);
-    }
+    // public function Siswa(){
+    //     return $this->hasOne(Siswa::class);
+    // }
 }

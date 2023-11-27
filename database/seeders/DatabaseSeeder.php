@@ -23,19 +23,19 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        User::create([
-            'name' => 'admin',
-            'username' => 'admin',
-            'email' => 'admin@mail.com',
-            'password' => Hash::make('123123'),
-            'role_id' => 1
-        ]);
 
         Role::create([
             'role_name' => 'admin'
         ]);
         Role::create([
             'role_name' => 'siswa'
+        ]);
+        User::create([
+            'name' => 'admin',
+            'username' => 'admin',
+            'email' => 'admin@mail.com',
+            'password' => Hash::make('123123'),
+            'role_id' => 1
         ]);
         Diniyyah::create([
             'nama_tingkatan' => 'Ula',
@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
             'ketua_kamar' => 'Elang Prakoso'
         ]);
 
-        Ortu::factory(7)->create();
+        // Ortu::factory(7)->create();
         // Siswa::factory(10)->create();
 
     }

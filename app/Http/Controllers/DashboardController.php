@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function __construct()
-    {
-        $this->authorize('isAdmin');
-    }
+    // public function __construct()
+    // {
+    //     $this->authorize('isAdmin');
+    // }
     public function index()
     {
+        $this->authorize('isAdmin');
         $countSiswa = Siswa::get('nama')->count();
         // $getName = Siswa::get('nama')->first();
         // dd($getName);
